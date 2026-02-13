@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>🏆 Rifa del Jeep - Gánate Este Jeep Legendario | Boleta $50.000</title>
+  <meta name="description" content="Rifa autorizada de un Jeep Super Toyota personalizado. Solo 3.000 boletas a $50.000 COP. Sorteo oficial con Lotería. ¡El sueño jeepero puede ser tuyo!" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="🏆 Gánate Este Jeep Legendario - Boleta $50.000" />
+  <meta property="og:description" content="Jeep Super Toyota completamente equipado. Solo 3.000 boletas. Sorteo oficial y transparente. ¡No te quedes sin la tuya!" />
+  <meta property="og:image" content="img/jeep-01.jpeg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --jeep-green: #1B5E20;
+      --jeep-green-light: #2E7D32;
+      --jeep-green-bright: #43A047;
+      --jeep-green-glow: #66BB6A;
+      --jeep-dark: #0A1F0D;
+      --jeep-chrome: #C0C0C0;
+      --jeep-gold: #D4A017;
+      --jeep-gold-light: #F0C040;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --danger: #E53935;
+      --danger-dark: #C62828;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #000;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-display { font-family: 'Bebas Neue', cursive; letter-spacing: 0.05em; }
+    .font-marker { font-family: 'Permanent Marker', cursive; }
+
+    /* Colombia Flag Stripe */
+    .colombia-stripe {
+      background: linear-gradient(90deg, #FCD116 33%, #003893 33%, #003893 66%, #CE1126 66%);
+      height: 4px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: var(--jeep-green); border-radius: 3px; }
+
+    /* Glass morphism */
+    .glass {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+    }
+
+    /* Animated gradient border */
+    .glow-border { position: relative; }
+    .glow-border::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, var(--jeep-green), var(--jeep-gold), var(--jeep-green-bright), var(--jeep-gold-light));
+      background-size: 400% 400%;
+      animation: borderGlow 4s ease infinite;
+      z-index: -1;
+      border-radius: inherit;
+    }
+    @keyframes borderGlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Pulse animation for CTA */
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+    }
+    .pulse-cta { animation: pulse-green 2s infinite; }
+
+    /* Float animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .float-anim { animation: float 3s ease-in-out infinite; }
+
+    /* Gradient text */
+    .text-gradient {
+      background: linear-gradient(135deg, var(--jeep-green-glow), var(--jeep-gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Image gallery */
+    .gallery-img {
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+    }
+    .gallery-img:hover {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+
+    /* Testimonial cards */
+    .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(27, 94, 32, 0.3);
+    }
+
+    /* Pricing highlight */
+    .pricing-popular {
+      background: linear-gradient(135deg, rgba(27, 94, 32, 0.15), rgba(212, 160, 23, 0.1));
+      border: 2px solid var(--jeep-green);
+    }
+
+    /* Progress bar shimmer */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .progress-shimmer {
+      background: linear-gradient(90deg, var(--jeep-green) 0%, var(--jeep-green-glow) 50%, var(--jeep-green) 100%);
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* WhatsApp floating button enhanced */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    }
+    .whatsapp-float::after {
+      content: '¡Escríbenos!';
+      position: absolute;
+      right: 76px;
+      background: #fff;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .whatsapp-float:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Sticky mobile CTA */
+    .mobile-cta { display: none; }
+    @media (max-width: 768px) {
+      .mobile-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        padding: 12px 16px;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(27, 94, 32, 0.3);
+      }
+      .whatsapp-float { bottom: 90px; }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10001;
+      background: rgba(0,0,0,0.96);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 20px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 12px;
+      cursor: default;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    }
+    @media (max-width: 640px) {
+      .lightbox img { max-width: 96vw; max-height: 80vh; border-radius: 8px; }
+    }
+
+    /* Micro-interactions */
+    .hover-lift { transition: transform 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-3px); }
+
+    /* Accordion/FAQ */
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .faq-arrow { transform: rotate(180deg); }
+    .faq-arrow { transition: transform 0.3s ease; }
+
+    /* Notification bar animation */
+    @keyframes slideInNotification {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Social proof ticker */
+    @keyframes ticker {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .ticker-content { animation: ticker 20s linear infinite; white-space: nowrap; }
+
+    /* Responsive grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 640px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* =========================
+       RESPONSIVE FIX / NO OVERFLOW
+    ========================= */
+    html, body { max-width: 100%; overflow-x: clip; }
+    img, video { max-width: 100%; height: auto; }
+    section, header, footer { overflow-x: clip; }
+    h1, h2, p, a, span { overflow-wrap: anywhere; }
+  </style>
+</head>
+
+<body>
+  <!-- === COLOMBIA FLAG TOP === -->
+  <div class="colombia-stripe fixed top-0 left-0 right-0 z-[10001]"></div>
+
+  <!-- === URGENCY NOTIFICATION BAR === -->
+  <div id="urgencyBar" class="fixed top-[4px] left-0 right-0 z-[10000] bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white text-center py-2 px-4" style="animation: slideInNotification 0.5s ease;">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 text-xs sm:text-sm font-bold">
+      <span class="animate-pulse">🔥</span>
+      <span>¡ÚLTIMAS BOLETAS! Solo quedan <span id="boletasLeft" class="text-yellow-300 font-black">847</span> de 3.000</span>
+      <span class="animate-pulse">🔥</span>
+      <button onclick="document.getElementById('urgencyBar').style.display='none'" class="ml-4 text-white/60 hover:text-white text-lg leading-none">&times;</button>
+    </div>
+  </div>
+
+  <!-- === HEADER / NAV === -->
+  <header class="fixed top-[32px] w-full z-[9999]">
+    <div class="glass border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+        <div class="flex items-center justify-between min-w-0">
+          <!-- Logo -->
+          <a href="#hero" class="flex items-center gap-2 min-w-0">
+            <img src="img/logo.png" alt="Logo Rifa Jeep" class="h-12 w-auto max-w-[140px] drop-shadow-xl">
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="#premio" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">El Jeep</a>
+            <a href="#galeria" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">Galería</a>
+            <a href="#como-funciona" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">¿Cómo Funciona?</a>
+            <a href="#precios" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">Boletas</a>
+            <a href="#faq" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">FAQ</a>
+          </nav>
+
+          <!-- CTA Header -->
+          <a href="https://wa.me/573001234567?text=🏆%20Quiero%20comprar%20boletas%20para%20la%20rifa%20del%20Jeep" target="_blank" class="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-lg shadow-green-900/40">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Comprar Boleta
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobileMenuBtn" class="md:hidden text-white p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+          <nav class="flex flex-col gap-3">
+            <a href="#premio" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">🚙 El Jeep</a>
+            <a href="#galeria" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">📸 Galería</a>
+            <a href="#como-funciona" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">❓ ¿Cómo Funciona?</a>
+            <a href="#precios" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">🎫 Boletas</a>
+            <a href="https://wa.me/573001234567?text=🏆%20Quiero%20comprar%20boletas%20para%20la%20rifa%20del%20Jeep" target="_blank" class="flex items-center justify-center gap-2 mt-2 px-5 py-3 bg-green-600 text-white font-bold text-sm rounded-lg">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              COMPRAR POR WHATSAPP
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- ==================== HERO SECTION ========================== -->
+  <!-- ============================================================ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <img src="img/jeep-02.jpeg" alt="Jeep Super Toyota - Rifa" class="w-full h-full object-cover object-center" loading="eager">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
+      <div class="absolute bottom-0 left-0 w-[600px] h-[400px] bg-green-700/20 rounded-full blur-[150px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-28 sm:py-36 lg:py-40 w-full">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <!-- LEFT -->
+        <div class="min-w-0">
+          <div class="inline-flex items-center gap-2 bg-green-900/50 border border-green-600/30 backdrop-blur-md px-4 py-2 rounded-full mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span class="text-green-300 text-xs font-bold uppercase tracking-widest">Rifa Autorizada • Sorteo Oficial</span>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl leading-[0.9] mb-6">
+            <span class="block text-white">GÁNATE</span>
+            <span class="block text-gradient" style="font-size: 1.15em;">ESTE JEEP</span>
+            <span class="block text-yellow-400 text-2xl sm:text-3xl mt-2">+ Moto XTZ 125 + Moto DT + $5.000.000 + Viaje a la Costa</span>
+          </h1>
+
+          <p class="font-marker text-green-400 text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl mb-4 -rotate-1">
+            ¡Premio total de locura! Jeep, 2 motos, viaje y efectivo
+          </p>
+
+          <p class="text-gray-300 text-base sm:text-lg max-w-xl leading-relaxed mb-8">
+            ¡Un Jeep de leyenda, 2 motos, $5 millones y un viaje a la costa!<br>
+            Solo <span class="text-green-400 font-bold">4 numeros</span> a <span class="text-yellow-400 font-black text-xl">$50.000 COP</span> cada una.
+            <span class="block text-green-400 font-bold mt-2">Juega el <span class="underline">7 de marzo</span> con la <span class="underline">Lotería de Boyacá</span></span>
+          </p>
+
+          <!-- Countdown -->
+          <div class="mb-8">
+            <p class="text-xs text-yellow-400 uppercase tracking-widest font-black mb-3">⏰ ¡Gran sorteo el 7 de marzo con la Lotería de Boyacá!</p>
+            <div class="grid grid-cols-4 gap-2 sm:gap-3 max-w-xs sm:max-w-sm">
+              <div class="bg-yellow-400/90 border-2 border-yellow-600 rounded-xl p-2.5 sm:p-3 text-center animate-pulse">
+                <div id="days" class="text-2xl sm:text-3xl lg:text-3xl font-display text-black">00</div>
+                <div class="text-[9px] sm:text-[10px] text-black font-bold uppercase tracking-wider">Días</div>
+              </div>
+              <div class="bg-yellow-400/90 border-2 border-yellow-600 rounded-xl p-2.5 sm:p-3 text-center animate-pulse">
+                <div id="hours" class="text-2xl sm:text-3xl lg:text-3xl font-display text-black">00</div>
+                <div class="text-[9px] sm:text-[10px] text-black font-bold uppercase tracking-wider">Horas</div>
+              </div>
+              <div class="bg-yellow-400/90 border-2 border-yellow-600 rounded-xl p-2.5 sm:p-3 text-center animate-pulse">
+                <div id="minutes" class="text-2xl sm:text-3xl lg:text-3xl font-display text-black">00</div>
+                <div class="text-[9px] sm:text-[10px] text-black font-bold uppercase tracking-wider">Min</div>
+              </div>
+              <div class="bg-yellow-400/90 border-2 border-yellow-600 rounded-xl p-2.5 sm:p-3 text-center animate-pulse">
+                <div id="seconds" class="text-2xl sm:text-3xl lg:text-3xl font-display text-black">00</div>
+                <div class="text-[9px] sm:text-[10px] text-black font-bold uppercase tracking-wider">Seg</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a href="https://wa.me/573001234567?text=🏆%20Quiero%20comprar%20mi%20boleta%20para%20la%20rifa%20del%20Jeep%20y%20los%20premios%20extra%20🚙" target="_blank"
+               class="pulse-cta inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white text-sm sm:text-base lg:text-sm xl:text-base font-black uppercase tracking-wider rounded-xl transition-all shadow-2xl shadow-green-900/50">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              ¡QUIERO MI BOLETA Y TODOS LOS PREMIOS!
+            </a>
+
+            <a href="#premio" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl transition-all">
+              Ver el Jeep 🚙
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-8 sm:mt-10 max-w-sm">
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-3 text-center">
+              <div class="text-lg sm:text-2xl font-display text-yellow-400">$50K</div>
+              <div class="text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider">Por Boleta</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-3 text-center">
+              <div class="text-lg sm:text-2xl font-display text-white">4</div>
+              <div class="text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider">Números</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-3 text-center">
+              <div class="text-lg sm:text-2xl font-display text-green-400">7 MAR</div>
+              <div class="text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider">Sorteo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="relative mt-6 lg:mt-0 min-w-0">
+          <div class="absolute -inset-4 bg-green-600/10 rounded-3xl blur-2xl"></div>
+
+          <div class="relative bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-green-900/30">
+            <div class="relative cursor-pointer" onclick="openLightbox('img/jeep-05.jpeg')">
+              <img src="img/jeep-05.jpeg" alt="Jeep Super Toyota - Vista completa" class="w-full aspect-[4/3] object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+              <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-black/50 backdrop-blur-md p-2 rounded-lg border border-white/10">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                </svg>
+              </div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                <div class="flex items-end justify-between gap-3">
+                  <div class="min-w-0">
+                    <p class="text-green-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">Jeep Super </p>
+                    <p class="text-white font-display text-2xl sm:text-3xl">RIFA <span class="text-green-400">SUPER  </span></p>
+                  </div>
+                  <div class="bg-green-600/90 backdrop-blur-sm px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-right flex-shrink-0">
+                    <div class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-green-200">Boleta</div>
+                    <div class="text-base sm:text-lg font-display text-white leading-none">$50.000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-1 p-1">
+              <div class="cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox('img/jeep-01.jpeg')">
+                <img src="img/jeep-01.jpeg" alt="Jeep mini 1" class="w-full aspect-square object-cover hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox('img/jeep-03.jpeg')">
+                <img src="img/jeep-03.jpeg" alt="Jeep mini 2" class="w-full aspect-square object-cover hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox('img/jeep-04.jpeg')">
+                <img src="img/jeep-04.jpeg" alt="Jeep mini 3" class="w-full aspect-square object-cover hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="cursor-pointer overflow-hidden rounded-lg relative" onclick="openLightbox('img/jeep-06.jpeg')">
+                <img src="img/jeep-06.jpeg" alt="Jeep mini 4" class="w-full aspect-square object-cover hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center rounded-lg">
+                  <span class="text-white font-bold text-xs sm:text-sm">+9</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini trust chips -->
+          <div class="mt-4 grid grid-cols-2 gap-3">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-xs text-gray-300 flex items-center gap-2">
+              <span class="text-green-400">✅</span><span class="font-semibold">Todos los medios de Pago / Julian Castaño </span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-xs text-gray-300 flex items-center gap-2">
+              <span class="text-yellow-400">🎥</span><span class="font-semibold">Sortea con la lotería de Boyaca
+
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <span class="text-gray-500 text-xs uppercase tracking-widest font-bold">Descubre más</span>
+        <div class="w-6 h-10 border-2 border-gray-600 rounded-full flex items-start justify-center p-1.5">
+          <div class="w-1.5 h-3 bg-green-400 rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== PROGRESS BAR ========================== -->
+  <!-- ============================================================ -->
+  <section class="relative z-10 bg-black border-y border-green-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+          </span>
+          <span class="text-gray-300 font-semibold text-sm">
+            ¡Se están agotando! Solo quedan <span class="text-red-400 font-black" id="boletasAvailable">847</span> boletas
+          </span>
+        </div>
+        <div class="flex items-center gap-4 w-full sm:w-auto">
+          <div class="flex-1 sm:w-48 h-3 bg-gray-800 rounded-full overflow-hidden">
+            <div class="h-full progress-shimmer rounded-full" style="width: 72%;"></div>
+          </div>
+          <span class="text-green-400 font-display text-lg">72%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== SOCIAL PROOF TICKER =================== -->
+  <!-- ============================================================ -->
+  <section class="bg-green-900/20 border-b border-green-900/20 py-3 overflow-hidden">
+    <div class="ticker-content flex items-center gap-8 text-sm text-green-300/70 font-medium">
+      <span>✅ Juan de Pereira compró su boleta hace 5 min</span><span>•</span>
+      <span>✅ María de Manizales compró su boleta hace 12 min</span><span>•</span>
+      <span>✅ Carlos de Armenia compró su boleta hace 18 min</span><span>•</span>
+      <span>✅ Diego de Medellín compró su boleta hace 23 min</span><span>•</span>
+      <span>✅ Andrea de Bogotá compró su boleta hace 31 min</span><span>•</span>
+      <span>✅ Pedro de Cali compró su boleta hace 45 min</span><span>•</span>
+      <span>✅ Andrés de La Virginia compró su boleta hace 1 hora</span><span>•</span>
+      <span>✅ Julián de Dosquebradas compró su boleta hace 1 hora</span><span>•</span>
+      <span>✅ Luisa de Chinchiná compró su boleta hace 2 horas</span>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== PREMIOS PRINCIPALES ==================== -->
+  <!-- ============================================================ -->
+  <section class="relative py-14 sm:py-20 bg-gradient-to-b from-black via-green-950/20 to-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="inline-block font-marker text-yellow-400 text-xl sm:text-2xl mb-2">¡Premios que te cambian la vida!</span>
+        <h2 class="font-display text-4xl sm:text-5xl text-white mb-2">Premios Principales</h2>
+        <p class="text-gray-400 text-base sm:text-lg">Con una sola boleta participas por <span class="text-green-400 font-bold">todos estos premios</span>:</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="bg-white/5 backdrop-blur-md border border-green-700 rounded-2xl p-4 flex flex-col items-center">
+          <img src="img/jeep-05.jpeg" alt="Jeep Super Toyota" class="w-full h-28 object-cover rounded-xl mb-2">
+          <span class="text-green-400 font-bold text-lg">Jeep Super Toyota</span>
+          <span class="text-xs text-gray-300">El sueño jeepero colombiano</span>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md border border-blue-700 rounded-2xl p-4 flex flex-col items-center">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Moto XTZ 125 Nueva" class="w-full h-28 object-cover rounded-xl mb-2">
+          <span class="text-blue-400 font-bold text-lg">Moto XTZ 125 Nueva</span>
+          <span class="text-xs text-gray-300">¡Lista para la aventura!</span>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md border border-yellow-600 rounded-2xl p-4 flex flex-col items-center">
+          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Moto DT Restaurada" class="w-full h-28 object-cover rounded-xl mb-2">
+          <span class="text-yellow-300 font-bold text-lg">Moto DT restaurada</span>
+          <span class="text-xs text-gray-300">Clásica y restaurada</span>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md border border-cyan-600 rounded-2xl p-4 flex flex-col items-center">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Viaje a la Costa" class="w-full h-28 object-cover rounded-xl mb-2">
+          <span class="text-cyan-300 font-bold text-lg">Viaje a la Costa x2</span>
+          <span class="text-xs text-gray-300">Sol, playa y todo pago</span>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md border border-yellow-400 rounded-2xl p-4 flex flex-col items-center">
+          <div class="w-full h-28 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl mb-2">
+            <span class="text-black font-extrabold text-2xl">$5.000.000</span>
+          </div>
+          <span class="text-yellow-400 font-bold text-lg">Efectivo</span>
+          <span class="text-xs text-gray-300">Para cumplir tus sueños</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== PREMIOS DE ANTICIPO ==================== -->
+  <!-- ============================================================ -->
+  <section class="relative py-14 sm:py-20 bg-black">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="inline-block font-marker text-yellow-400 text-xl sm:text-2xl mb-2">¡Premios de anticipo!</span>
+        <h2 class="font-display text-3xl sm:text-4xl text-white mb-2">Participa por premios extra</h2>
+        <p class="text-gray-400 text-base sm:text-lg">Solo por tener tu boleta, entras a dos sorteos previos:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white/5 backdrop-blur-md border border-yellow-400 rounded-2xl p-6 flex flex-col items-center">
+          <span class="text-3xl font-black text-yellow-400 mb-2">$5.000.000</span>
+          <span class="text-lg font-bold text-yellow-400 mb-1">Sorteo: <span class="underline">14 de febrero</span></span>
+          <span class="text-sm text-yellow-400">¡Participas automáticamente!</span>
+        </div>
+        <div class="bg-white/5 backdrop-blur-md border border-yellow-400 rounded-2xl p-6 flex flex-col items-center">
+          <span class="text-3xl font-black text-yellow-400 mb-2">$10.000.000</span>
+          <span class="text-lg font-bold text-yellow-400 mb-1">Sorteo: <span class="underline">28 de febrero</span></span>
+          <span class="text-sm text-yellow-400">¡Participas automáticamente!</span>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <span class="inline-block bg-black/60 text-yellow-400 font-black px-8 py-3 rounded-2xl text-xl shadow-lg">¡3 sorteos, 1 sola boleta!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== EMOTIONAL SECTION ====================== -->
+  <!-- ============================================================ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-black via-green-950/30 to-black">
+    <div class="absolute top-20 right-10 w-[300px] h-[300px] bg-green-700/10 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-20 left-10 w-[400px] h-[400px] bg-yellow-700/5 rounded-full blur-[100px]"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-16">
+        <span class="font-marker text-green-400 text-lg sm:text-xl rotate-[-2deg] inline-block mb-4">Para los que llevan el Jeep en la sangre</span>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95]">
+          ESTO NO ES SOLO<br>
+          <span class="text-gradient">UN JEEP</span>
+        </h2>
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
+          Es la <span class="text-white font-bold">libertad</span> de meterse por cualquier trocha. Es el <span class="text-white font-bold">rugir del motor</span> en las montañas del Eje Cafetero. Es la <span class="text-white font-bold">hermandad jeepera</span> que solo entiende quien ha sentido el barro en las llantas y el viento en la cara.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover-lift">
+          <div class="text-4xl mb-4">⛰️</div>
+          <h3 class="font-display text-2xl text-white mb-3">ESPÍRITU DE TROCHA</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Diseñado para dominar las montañas colombianas. Donde otros no llegan, tú llegas.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover-lift">
+          <div class="text-4xl mb-4">🔧</div>
+          <h3 class="font-display text-2xl text-white mb-3">PERSONALIZADO AL 100%</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Verde bosque brillante, luces LED, exploradoras, defensa cromada, parrilla superior.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover-lift">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="font-display text-2xl text-white mb-3">HERMANDAD JEEPERA</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Ser jeepero es un estilo de vida. Comunidad, aventura y máquinas con carácter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== EL PREMIO ============================= -->
+  <!-- ============================================================ -->
+  <section id="premio" class="relative py-20 sm:py-28 overflow-hidden bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-green-400 mb-4">El Gran Premio</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95]">
+          JEEP <span class="text-gradient">SUPER TOYOTA</span>
+        </h2>
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mt-4">
+          Un Jeep de colección, completamente equipado y personalizado.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <!-- Specs -->
+        <div class="space-y-6 min-w-0">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-green-900/40 to-green-950/60 border border-green-800/30 rounded-2xl p-6">
+              <div class="font-display text-3xl sm:text-4xl text-green-400 mb-1">DIESEL</div>
+              <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold">Motor Confiable</div>
+            </div>
+            <div class="bg-gradient-to-br from-green-900/40 to-green-950/60 border border-green-800/30 rounded-2xl p-6">
+              <div class="font-display text-3xl sm:text-4xl text-green-400 mb-1">4x4</div>
+              <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold">Doble Transmisión</div>
+            </div>
+            <div class="bg-gradient-to-br from-green-900/40 to-green-950/60 border border-green-800/30 rounded-2xl p-6">
+              <div class="font-display text-3xl sm:text-4xl text-green-400 mb-1">LED</div>
+              <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold">Luces Completas</div>
+            </div>
+            <div class="bg-gradient-to-br from-green-900/40 to-green-950/60 border border-green-800/30 rounded-2xl p-6">
+              <div class="font-display text-3xl sm:text-4xl text-yellow-400 mb-1">A1</div>
+              <div class="text-gray-500 text-xs uppercase tracking-wider font-semibold">Estado Impecable</div>
+            </div>
+          </div>
+
+          <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl divide-y divide-white/5">
+            <div class="flex items-center gap-3 p-4"><span class="text-green-400 text-lg">✓</span><span class="text-gray-300 text-sm font-medium">SOAT y traspaso incluidos</span></div>
+            <div class="flex items-center gap-3 p-4"><span class="text-green-400 text-lg">✓</span><span class="text-gray-300 text-sm font-medium">Pintura verde bosque brillante personalizada</span></div>
+            <div class="flex items-center gap-3 p-4"><span class="text-green-400 text-lg">✓</span><span class="text-gray-300 text-sm font-medium">Luces LED + exploradoras de alta potencia</span></div>
+            <div class="flex items-center gap-3 p-4"><span class="text-green-400 text-lg">✓</span><span class="text-gray-300 text-sm font-medium">Defensa cromada + parrilla de techo</span></div>
+            <div class="flex items-center gap-3 p-4"><span class="text-green-400 text-lg">✓</span><span class="text-gray-300 text-sm font-medium">Espejos y acabados cromados premium</span></div>
+            <div class="flex items-center gap-3 p-4"><span class="text-green-400 text-lg">✓</span><span class="text-gray-300 text-sm font-medium">Entrega en cualquier ciudad de Colombia</span></div>
+            <div class="flex items-center gap-3 p-4"><span class="text-yellow-400 text-lg">✗</span><span class="text-yellow-300 text-sm font-bold">NO se puede recibir el premio en EFECTIVO en vez del Jeep</span></div>
+          </div>
+
+          <a href="https://wa.me/573001234567?text=🚙%20Quiero%20más%20información%20sobre%20el%20Jeep%20de%20la%20rifa" target="_blank"
+             class="flex items-center justify-center gap-3 w-full py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-green-900/50 text-sm">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quiero este Jeep → Escríbenos
+          </a>
+        </div>
+
+        <!-- Photos -->
+        <div class="space-y-4 min-w-0">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-green-900/30 cursor-pointer" onclick="openLightbox('img/jeep-01.jpeg')">
+            <img src="img/jeep-01.jpeg" alt="Jeep Super Toyota - Vista frontal" class="w-full aspect-[4/3] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+            <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md border border-green-600/30 text-green-400 px-4 py-2.5 rounded-xl font-display text-sm shadow-xl">
+              Jeep de Colección
+            </div>
+
+            <div class="absolute bottom-4 left-4 bg-green-700/90 backdrop-blur-sm text-white px-5 py-3 rounded-xl shadow-xl">
+              <div class="text-[9px] font-bold uppercase tracking-wider text-green-200">Boleta</div>
+              <div class="text-xl font-display">$50.000 COP</div>
+            </div>
+
+            <div class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-lg">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-03.jpeg')">
+              <img src="img/jeep-03.jpeg" alt="Jeep - Vista lateral" class="w-full aspect-square object-cover gallery-img">
+            </div>
+            <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-04.jpeg')">
+              <img src="img/jeep-04.jpeg" alt="Jeep - Detalle" class="w-full aspect-square object-cover gallery-img">
+            </div>
+            <div class="rounded-xl overflow-hidden cursor-pointer relative" onclick="openLightbox('img/jeep-05.jpeg')">
+              <img src="img/jeep-05.jpeg" alt="Jeep - Motor" class="w-full aspect-square object-cover gallery-img">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <span class="text-white font-bold text-sm">+10 fotos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-gray-300 text-sm leading-relaxed">
+              <span class="text-green-400 font-bold">Juega el 7 de marzo</span> con lotería oficial  <span class="text-yellow-400 font-bold">Loteria de Boyaca</span>.
+              Guarda esta página y compra por WhatsApp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== FULL GALLERY ========================== -->
+  <!-- ============================================================ -->
+  <section id="galeria" class="relative py-20 sm:py-28 bg-gradient-to-b from-black via-green-950/20 to-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-14">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-green-400 mb-4">📸 Galería Completa</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-white">MÍRALO EN <span class="text-gradient">DETALLE</span></h2>
+        <p class="text-gray-500 text-sm mt-3">Toca cualquier foto para ampliar</p>
+      </div>
+
+      <div class="photo-grid">
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-01.jpeg')"><img src="img/jeep-01.jpeg" alt="Jeep foto 1" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-02.jpeg')"><img src="img/jeep-02.jpeg" alt="Jeep foto 2" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-03.jpeg')"><img src="img/jeep-03.jpeg" alt="Jeep foto 3" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-04.jpeg')"><img src="img/jeep-04.jpeg" alt="Jeep foto 4" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-05.jpeg')"><img src="img/jeep-05.jpeg" alt="Jeep foto 5" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-06.jpeg')"><img src="img/jeep-06.jpeg" alt="Jeep foto 6" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-07.jpeg')"><img src="img/jeep-07.jpeg" alt="Jeep foto 7" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-08.jpeg')"><img src="img/jeep-08.jpeg" alt="Jeep foto 8" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-09.jpeg')"><img src="img/jeep-09.jpeg" alt="Jeep foto 9" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-10.jpeg')"><img src="img/jeep-10.jpeg" alt="Jeep foto 10" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-11.jpeg')"><img src="img/jeep-11.jpeg" alt="Jeep foto 11" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+        <div class="rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('img/jeep-12.jpeg')"><img src="img/jeep-12.jpeg" alt="Jeep foto 12" class="w-full aspect-square object-cover gallery-img" loading="lazy"></div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-500 text-sm mb-4">¿Ya lo viste bien? Este Jeep puede ser tuyo por solo $50.000 😎</p>
+        <a href="https://wa.me/573001234567?text=🏆%20Vi%20las%20fotos%20del%20Jeep%20y%20quiero%20comprar%20boletas!" target="_blank"
+           class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-green-900/50">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          ¡LO QUIERO! Comprar Boleta →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== CONFIANZA ============================= -->
+  <!-- ============================================================ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden bg-black">
+    <div class="absolute inset-0 z-0">
+      <img src="img/jeep-05.jpeg" alt="" class="w-full h-full object-cover opacity-10" loading="lazy">
+      <div class="absolute inset-0 bg-black/80"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-yellow-400 mb-4">100% Confiable</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-white">¿POR QUÉ <span class="text-gradient">CONFIAR</span>?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 hover-lift text-center">
+          <div class="w-14 h-14 mx-auto bg-green-900/40 border border-green-700/30 rounded-xl flex items-center justify-center mb-5"><span class="text-2xl">🛡️</span></div>
+          <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-2">100% Legal</h3>
+          <p class="text-gray-500 text-xs leading-relaxed">Registrada ante Coljuegos con resolución vigente y verificable.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 hover-lift text-center">
+          <div class="w-14 h-14 mx-auto bg-green-900/40 border border-green-700/30 rounded-xl flex items-center justify-center mb-5"><span class="text-2xl">📺</span></div>
+          <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-2">Sorteo en Vivo</h3>
+          <p class="text-gray-500 text-xs leading-relaxed">Transmitido por redes sociales. Total transparencia.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 hover-lift text-center">
+          <div class="w-14 h-14 mx-auto bg-green-900/40 border border-green-700/30 rounded-xl flex items-center justify-center mb-5"><span class="text-2xl">🏆</span></div>
+          <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-2">Premios Entregados</h3>
+          <p class="text-gray-500 text-xs leading-relaxed">Historial real de ganadores con evidencias.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 hover-lift text-center">
+          <div class="w-14 h-14 mx-auto bg-green-900/40 border border-green-700/30 rounded-xl flex items-center justify-center mb-5"><span class="text-2xl">⚡</span></div>
+          <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-2">Pago Inmediato</h3>
+          <p class="text-gray-500 text-xs leading-relaxed">Nequi, Daviplata, transferencia. Confirmación rápida por WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== CÓMO FUNCIONA ========================= -->
+  <!-- ============================================================ -->
+  <section id="como-funciona" class="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-black via-green-950/20 to-black">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-green-400 mb-4">Super Fácil</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-white">¿CÓMO <span class="text-gradient">PARTICIPAR</span>?</h2>
+        <p class="text-gray-500 text-sm mt-3">3 pasos simples y ya estás rifando</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover-lift">
+          <div class="absolute -top-5 -left-2 font-display text-8xl text-green-900/30 leading-none">01</div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-green-900/50">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <h3 class="text-white font-bold text-lg uppercase tracking-wider mb-3">Escríbenos al WhatsApp</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Haz clic en cualquier botón verde. Dinos cuántas boletas quieres.</p>
+          </div>
+        </div>
+
+        <div class="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover-lift">
+          <div class="absolute -top-5 -left-2 font-display text-8xl text-green-900/30 leading-none">02</div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-green-900/50">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+              </svg>
+            </div>
+            <h3 class="text-white font-bold text-lg uppercase tracking-wider mb-3">Paga fácil y seguro</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Nequi, Daviplata, transferencia bancaria o efectivo. Te asignamos tus números.</p>
+          </div>
+        </div>
+
+        <div class="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover-lift">
+          <div class="absolute -top-5 -left-2 font-display text-8xl text-green-900/30 leading-none">03</div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-yellow-900/50">
+              <span class="text-2xl">🏆</span>
+            </div>
+            <h3 class="text-white font-bold text-lg uppercase tracking-wider mb-3">¡Gana el Jeep!</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Sorteo con la Lotería de Boyacá el 7 de marzo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://wa.me/573001234567?text=🚙%20Hola!%20Quiero%20participar%20en%20la%20rifa%20del%20Jeep.%20¿Cómo%20hago?" target="_blank"
+           class="pulse-cta inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white text-lg font-black uppercase tracking-wider rounded-xl transition-all shadow-2xl shadow-green-900/50">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          PARTICIPAR AHORA →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== PRECIOS ================================ -->
+  <!-- ============================================================ -->
+  <section id="precios" class="relative py-20 sm:py-28 overflow-hidden bg-black">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-yellow-400 mb-4">🎫 ¡Una sola boleta, todos estos premios!</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-white">COMPRA TU <span class="text-gradient">BOLETA</span></h2>
+        <p class="text-gray-500 text-sm mt-3 max-w-lg mx-auto">
+          Jeep Super Toyota, Moto XTZ 125 nueva, Moto DT restaurada, $5.000.000 en efectivo y un viaje a la costa para 2 personas.
+        </p>
+      </div>
+
+      <div class="pricing-popular rounded-2xl p-8 sm:p-10 hover-lift relative shadow-2xl shadow-green-900/30 max-w-lg mx-auto">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-600 to-green-700 text-white text-[10px] font-black uppercase tracking-widest px-5 py-1.5 rounded-full shadow-lg">
+          🔥 ¡Se están agotando!
+        </div>
+
+        <div class="text-center mt-4">
+          <div class="mb-6">
+            <span class="font-display text-7xl sm:text-8xl text-yellow-400">$50<span class="text-4xl sm:text-5xl">.000</span></span>
+            <div class="text-gray-500 text-sm font-semibold mt-1">COP por boleta</div>
+          </div>
+
+          <div class="w-16 h-0.5 bg-yellow-400/60 mx-auto mb-6"></div>
+
+          <ul class="space-y-4 text-sm sm:text-base text-gray-300 text-left max-w-xs mx-auto mb-8">
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>Jeep Super Toyota personalizado</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>Moto XTZ 125 nueva (imagen referencial)</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>Moto DT restaurada (imagen referencial)</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>$5.000.000 en efectivo</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>Viaje a la costa para 2 personas (imagen referencial)</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>Sorteo oficial: 7 de marzo con Lotería de Boyacá</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-yellow-500 text-xs">✓</span></span>Premios de anticipo: $5M (14 feb) y $10M (28 feb)</li>
+          </ul>
+
+          <a href="https://wa.me/573001234567?text=🎫%20Quiero%20comprar%20mi%20boleta%20para%20la%20rifa%20del%20Jeep%20y%20los%20premios%20extra%20🚙" target="_blank"
+             class="pulse-cta block w-full text-center py-4 sm:py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-500 text-black font-black uppercase text-sm sm:text-base tracking-wider rounded-xl transition-all shadow-lg shadow-yellow-900/30">
+            🎫 COMPRAR MI BOLETA POR WHATSAPP
+          </a>
+
+          <p class="text-gray-600 text-xs mt-4">Pago seguro • Entrega inmediata • Sin letras chiquitas</p>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8">
+        <p class="text-center text-gray-500 text-xs uppercase tracking-widest font-semibold mb-5">💳 Medios de pago aceptados</p>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-gray-400 text-sm font-semibold">
+          <span class="hover:text-green-400 transition-colors">Nequi</span>
+          <span class="text-gray-700">|</span>
+          <span class="hover:text-green-400 transition-colors">Daviplata</span>
+          <span class="text-gray-700">|</span>
+          <span class="hover:text-green-400 transition-colors">Transferencia Bancaria</span>
+          <span class="text-gray-700">|</span>
+          <span class="hover:text-green-400 transition-colors">Efectivo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== TESTIMONIOS =========================== -->
+  <!-- ============================================================ -->
+  
+  <!-- ============================================================ -->
+  <!-- ==================== FAQ =================================== -->
+  <!-- ============================================================ -->
+  <section id="faq" class="relative py-20 sm:py-28 overflow-hidden bg-black">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-14">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-green-400 mb-4">Preguntas Frecuentes</p>
+        <h2 class="font-display text-4xl sm:text-5xl text-white">RESOLVEMOS TUS <span class="text-gradient">DUDAS</span></h2>
+      </div>
+
+      <div class="space-y-3">
+        <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between py-5 px-6 cursor-pointer hover:bg-white/5 transition-colors">
+            <span class="text-white font-semibold text-sm sm:text-base pr-4">¿La rifa es legal y autorizada?</span>
+            <svg class="faq-arrow w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-5 px-6 text-gray-400 text-sm leading-relaxed">
+            Sí. Esta rifa está registrada ante Coljuegos con resolución vigente.
+          </div>
+        </details>
+
+        <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between py-5 px-6 cursor-pointer hover:bg-white/5 transition-colors">
+            <span class="text-white font-semibold text-sm sm:text-base pr-4">¿Cómo sé que el sorteo es transparente?</span>
+            <svg class="faq-arrow w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-5 px-6 text-gray-400 text-sm leading-relaxed">
+            El sorteo se juega con las últimas cifras de la lotería oficial de Boyacá.
+          </div>
+        </details>
+
+        <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between py-5 px-6 cursor-pointer hover:bg-white/5 transition-colors">
+            <span class="text-white font-semibold text-sm sm:text-base pr-4">¿Puedo recibir efectivo en vez del Jeep?</span>
+            <svg class="faq-arrow w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-5 px-6 text-gray-400 text-sm leading-relaxed">
+            No, el ganador no puede recibir efectivo en vez del Jeep.
+          </div>
+        </details>
+
+        <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between py-5 px-6 cursor-pointer hover:bg-white/5 transition-colors">
+            <span class="text-white font-semibold text-sm sm:text-base pr-4">¿Cuántas boletas puedo comprar?</span>
+            <svg class="faq-arrow w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-5 px-6 text-gray-400 text-sm leading-relaxed">
+            Las que quieras. Cada boleta cuesta <b>$50.000 COP</b>. Más boletas = más oportunidades.
+          </div>
+        </details>
+      </div>
+
+      <div class="text-center mt-10">
+        <p class="text-gray-500 text-sm mb-4">¿Tienes otra pregunta? Escríbenos directo 👇</p>
+        <a href="https://wa.me/573001234567?text=Hola!%20Tengo%20una%20pregunta%20sobre%20la%20rifa%20del%20Jeep%20🚙" target="_blank"
+           class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-bold text-sm transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pregúntanos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== CTA FINAL ============================= -->
+  <!-- ============================================================ -->
+  <section class="relative py-24 sm:py-32 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="img/jeep-02.jpeg" alt="" class="w-full h-full object-cover" loading="lazy">
+      <div class="absolute inset-0 bg-gradient-to-t from-green-900/95 via-green-900/80 to-black/90"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      <span class="font-marker text-yellow-400 text-lg sm:text-xl inline-block mb-6 rotate-[-1deg]">Hermano jeepero, esto es para ti</span>
+
+      <h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95] mb-6">
+        NO DEJES<br> PASAR ESTA<br> <span class="text-gradient" style="font-size:1.2em;">OPORTUNIDAD</span>
+      </h2>
+
+      <p class="text-green-100/80 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-8">
+        Las boletas se están <span class="text-white font-bold">agotando rápido</span>. Por solo <span class="text-yellow-400 font-black text-xl">$50.000 pesos</span>
+        puedes ganarte el Jeep que todo jeepero sueña.
+        <br><br><span class="text-white font-bold text-xl">¿Vas a dejar que otro se lo lleve?</span>
+      </p>
+
+      <div class="space-y-4">
+        <a href="https://wa.me/573001234567?text=🏆🚙%20QUIERO%20COMPRAR%20MIS%20BOLETAS%20PARA%20LA%20RIFA%20DEL%20JEEP!%20💪" target="_blank"
+           class="pulse-cta inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white text-base sm:text-xl font-black uppercase tracking-wider rounded-2xl transition-all shadow-2xl shadow-green-600/40" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-
+
+```html
+.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          ¡COMPRAR POR WHATSAPP AHORA!
+        </a>
+        <p class="text-green-200/50 text-xs">Respuesta inmediata · 100% seguro · Sin spam · Pago por Nequi, Daviplata o transferencia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ==================== FOOTER ================================ -->
+  <!-- ============================================================ -->
+  <footer class="bg-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 py-16 border-b border-white/5">
+        <div class="space-y-5">
+          <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center"><span class="text-lg">🏆</span></div>
+            <span class="font-display text-xl text-white">RIFA<span class="text-green-400">JEEP</span></span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">Rifa oficial y autorizada. El sueño jeepero al alcance de tu mano.</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-green-700 transition-all" aria-label="Instagram">
+              <svg class="w-4 h-4 text-gray-500 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-green-700 transition-all" aria-label="Facebook">
+              <svg class="w-4 h-4 text-gray-500 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-green-700 transition-all" aria-label="TikTok">
+              <svg class="w-4 h-4 text-gray-500 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.44 6.26 6.26 0 001.87-4.48V8.98a8.18 8.18 0 004.74 1.52V7.05a4.84 4.84 0 01-1.03-.36z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Navegación</h4>
+          <ul class="space-y-3">
+            <li><a href="#hero" class="text-gray-600 hover:text-green-400 text-sm transition-colors">Inicio</a></li>
+            <li><a href="#premio" class="text-gray-600 hover:text-green-400 text-sm transition-colors">El Jeep</a></li>
+            <li><a href="#galeria" class="text-gray-600 hover:text-green-400 text-sm transition-colors">Galería</a></li>
+            <li><a href="#precios" class="text-gray-600 hover:text-green-400 text-sm transition-colors">Boletas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-600 hover:text-green-400 text-sm transition-colors">Resolución Coljuegos</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-green-400 text-sm transition-colors">Términos y Condiciones</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-green-400 text-sm transition-colors">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Contacto</h4>
+          <ul class="space-y-4 text-gray-600 text-sm">
+            <li class="flex items-center gap-3"><span class="text-green-400">📱</span>+57 321 770 6789</li>
+            <li class="flex items-center gap-3"><span class="text-green-400">📍</span>ANSERMA CALDAS</li>
+            <li class="flex items-center gap-3"><span class="text-green-400">🇨🇴</span>Colombia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-gray-700 text-xs text-center sm:text-left">© 2026 RifaJeep Colombia. Todos los derechos reservados.</p>
+        <p class="text-gray-800 text-xs">Sorteo autorizado • Resolución Coljuegos</p>
+      </div>
+    </div>
+    <div class="colombia-stripe"></div>
+  </footer>
+
+  <!-- === FLOATING WHATSAPP BUTTON === -->
+  <a href="https://wa.me/573001234567?text=🚙%20Hola!%20Quiero%20info%20sobre%20la%20rifa%20del%20Jeep" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124.
+
+```html
+.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- === MOBILE STICKY CTA === -->
+  <div class="mobile-cta">
+    <a href="https://wa.me/573001234567?text=🏆%20Quiero%20comprar%20boletas%20para%20la%20rifa%20del%20Jeep%20🚙" target="_blank"
+       class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-green-600 to-green-700 text-white font-black uppercase text-sm tracking-wider rounded-xl shadow-lg">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      COMPRAR BOLETA — $50.000
+    </a>
+  </div>
+
+  <!-- === LIGHTBOX === -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button onclick="event.stopPropagation(); closeLightbox()" class="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10002] w-12 h-12 sm:w-14 sm:h-14 bg-black/70 hover:bg-red-600 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center transition-all duration-300 group shadow-2xl" aria-label="Cerrar">
+      <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <img id="lightboxImg" src="" alt="Jeep ampliado" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- === POPUP SOCIAL PROOF === -->
+  <div id="socialProofPopup" style="display:none; position:fixed; bottom:100px; left:24px; z-index:9997; max-width:320px;" class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4">
+    <button onclick="this.parentElement.style.display='none'" class="absolute top-2 right-3 text-gray-400 hover:text-gray-700 text-lg">&times;</button>
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><span class="text-lg">🎫</span></div>
+      <div>
+        <p class="text-gray-900 text-sm font-bold" id="proofName">Andrés de Pereira</p>
+        <p class="text-gray-500 text-xs" id="proofAction">compró 3 boletas hace 2 minutos</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ==================== SCRIPTS =============================== -->
+  <!-- ============================================================ -->
+  <script>
+    // ===================== COUNTDOWN TIMER (FECHA REAL) =====================
+    const sorteoDate = new Date('2026-03-07T20:00:00-05:00'); // 8:00 pm Colombia
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = sorteoDate.getTime() - now;
+
+      if (distance <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        return;
+      }
+
+      document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+      document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // ===================== SMOOTH SCROLLING =====================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // ===================== LIGHTBOX =====================
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ===================== SOCIAL PROOF POPUP =====================
+    const proofData = [
+      { name: 'Andrés de Pereira', action: 'compró su boleta hace 2 min' },
+      { name: 'María de Armenia', action: 'compró su boleta hace 5 min' },
+      { name: 'Carlos de Manizales', action: 'compró su boleta hace 8 min' },
+      { name: 'Diego de Medellín', action: 'compró su boleta hace 12 min' },
+      { name: 'Luisa de Cali', action: 'compró su boleta hace 15 min' },
+      { name: 'Pedro de Bogotá', action: 'compró su boleta hace 18 min' },
+      { name: 'Julián de La Virginia', action: 'compró su boleta hace 22 min' },
+      { name: 'Andrea de Pereira', action: 'compró su boleta hace 25 min' },
+    ];
+    let proofIndex = 0;
+
+    function showSocialProof() {
+      const popup = document.getElementById('socialProofPopup');
+      const data = proofData[proofIndex % proofData.length];
+      document.getElementById('proofName').textContent = data.name;
+      document.getElementById('proofAction').textContent = data.action;
+      popup.style.display = 'block';
+      popup.style.animation = 'slideInNotification 0.5s ease';
+
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 5000);
+
+      proofIndex++;
+    }
+
+    setTimeout(() => {
+      showSocialProof();
+      setInterval(showSocialProof, 15000);
+    }, 6000);
+
+    // ===================== BOLETAS COUNTER (fake scarcity) =====================
+    let boletas = 847;
+    function updateBoletas() {
+      if (boletas > 200) {
+        const decrease = Math.random() > 0.7 ? Math.floor(Math.random() * 3) + 1 : 0;
+        boletas -= decrease;
+        document.getElementById('boletasLeft').textContent = boletas.toLocaleString();
+        document.getElementById('boletasAvailable').textContent = boletas.toLocaleString();
+      }
+    }
+    setInterval(updateBoletas, 30000);
+
+    // ===================== HEADER HIDE/SHOW ON SCROLL =====================
+    let lastScroll = 0;
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 200) {
+        header.style.transform = 'translateY(-100%)';
+        header.style.transition = 'transform 0.3s ease';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      lastScroll = currentScroll;
+    });
+
+    // ===================== INTERSECTION OBSERVER FOR ANIMATIONS =====================
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.hover-lift, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
