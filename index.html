@@ -267,6 +267,75 @@
     img, video { max-width: 100%; height: auto; }
     section, header, footer { overflow-x: clip; }
     h1, h2, p, a, span { overflow-wrap: anywhere; }
+
+    /* ===== BOLETAS SELECTOR MODULE ===== */
+    .boleta-btn {
+      position: relative; display: flex; align-items: center; justify-content: center;
+      padding: 12px 6px; border-radius: 12px; font-family: 'Bebas Neue', cursive;
+      font-size: 1.35rem; letter-spacing: 0.08em; cursor: pointer;
+      background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08);
+      color: #ccc; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+      user-select: none; -webkit-tap-highlight-color: transparent;
+    }
+    .boleta-btn:hover {
+      border-color: var(--jeep-green-bright); background: rgba(27,94,32,0.12);
+      color: var(--jeep-green-glow); transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(27,94,32,0.15);
+    }
+    .boleta-btn.selected {
+      background: linear-gradient(135deg, var(--jeep-green), var(--jeep-green-light));
+      border-color: var(--jeep-green-bright); color: #fff;
+      box-shadow: 0 4px 20px rgba(27,94,32,0.4); transform: scale(1.04);
+    }
+    .boleta-btn.selected::after {
+      content: '✓'; position: absolute; top: -6px; right: -6px;
+      width: 20px; height: 20px; background: var(--jeep-gold); color: #000;
+      border-radius: 50%; font-size: 11px; font-family: 'Inter', sans-serif;
+      font-weight: 900; display: flex; align-items: center; justify-content: center;
+      animation: popIn 0.3s ease;
+    }
+    .boleta-btn.search-highlight {
+      animation: highlightPulse 1.5s ease;
+      border-color: var(--jeep-gold); background: rgba(212,160,23,0.12);
+    }
+    @keyframes popIn { 0% { transform: scale(0); } 60% { transform: scale(1.3); } 100% { transform: scale(1); } }
+    @keyframes highlightPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(212,160,23,0); } 50% { box-shadow: 0 0 0 12px rgba(212,160,23,0.2); } }
+    .boleta-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--jeep-green), var(--jeep-green-light));
+      color: white; font-family: 'Bebas Neue', cursive; font-size: 1.1rem;
+      font-weight: 600; letter-spacing: 0.05em; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .boleta-chip:hover { background: linear-gradient(135deg, var(--jeep-green-bright), var(--jeep-green)); transform: scale(1.06); }
+    .boleta-chip .chip-x { font-size: 12px; opacity: 0.8; font-family: 'Inter', sans-serif; font-weight: 700; }
+    .page-btn {
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      border-radius: 10px; font-size: 13px; font-weight: 700; cursor: pointer;
+      transition: all 0.2s ease; border: 1px solid transparent;
+      background: transparent; color: #888;
+    }
+    .page-btn:hover { background: rgba(255,255,255,0.06); color: #fff; }
+    .page-btn.active { background: var(--jeep-green); color: white; border-color: var(--jeep-green); box-shadow: 0 4px 12px rgba(27,94,32,0.3); }
+    .page-btn.dots { cursor: default; opacity: 0.4; }
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .boletas-fade-in { animation: fadeSlideUp 0.4s ease forwards; }
+    .checkout-form input {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 14px 16px; color: #fff; font-size: 14px;
+      font-family: 'Inter', sans-serif; transition: all 0.2s ease; outline: none;
+    }
+    .checkout-form input::placeholder { color: #666; }
+    .checkout-form input:focus { border-color: var(--jeep-green-bright); background: rgba(27,94,32,0.08); box-shadow: 0 0 0 3px rgba(27,94,32,0.15); }
+    .checkout-form input.invalid { border-color: var(--danger); background: rgba(229,57,53,0.06); }
+    .step-indicator {
+      width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', cursive; font-size: 1.2rem; transition: all 0.3s ease;
+    }
+    .step-indicator.active { background: var(--jeep-green); color: white; box-shadow: 0 0 20px rgba(27,94,32,0.4); }
+    .step-indicator.done { background: var(--jeep-gold); color: #000; }
+    .step-indicator.pending { background: rgba(255,255,255,0.06); color: #666; border: 1px solid rgba(255,255,255,0.1); }
   </style>
 </head>
 
@@ -300,6 +369,7 @@
             <a href="#galeria" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">Galería</a>
             <a href="#como-funciona" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">¿Cómo Funciona?</a>
             <a href="#precios" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">Boletas</a>
+            <a href="#elegir-boletas" class="text-xs font-bold text-yellow-400 hover:text-yellow-300 transition-colors uppercase tracking-widest">🎫 Elegir Números</a>
             <a href="#faq" class="text-xs font-bold text-gray-400 hover:text-green-400 transition-colors uppercase tracking-widest">FAQ</a>
           </nav>
 
@@ -322,6 +392,7 @@
             <a href="#galeria" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">📸 Galería</a>
             <a href="#como-funciona" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">❓ ¿Cómo Funciona?</a>
             <a href="#precios" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-gray-300 hover:text-green-400 transition-colors py-2">🎫 Boletas</a>
+            <a href="#elegir-boletas" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition-colors py-2">🔥 Elegir Mis Números</a>
             <a href="https://wa.me/573218626030?text=🏆%20Quiero%20comprar%20boletas%20para%20la%20rifa%20del%20Jeep" target="_blank" class="flex items-center justify-center gap-2 mt-2 px-5 py-3 bg-green-600 text-white font-bold text-sm rounded-lg">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               COMPRAR POR WHATSAPP
@@ -514,6 +585,172 @@
             <div class="h-full progress-shimmer rounded-full" style="width: 72%;"></div>
           </div>
           <span class="text-green-400 font-display text-lg">72%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ============================================================ -->
+  <!-- =============== SELECTOR DE BOLETAS ========================= -->
+  <!-- ============================================================ -->
+  <section id="elegir-boletas" class="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-black via-green-950/30 to-black">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-green-700/8 rounded-full blur-[200px]"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-yellow-700/5 rounded-full blur-[150px]"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 backdrop-blur-md px-5 py-2 rounded-full mb-5">
+          <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+          <span class="text-yellow-300 text-xs font-bold uppercase tracking-widest">¡Elige tus números de la suerte!</span>
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-[0.95]">ESCOGE TUS <span class="text-gradient">BOLETAS</span></h2>
+        <p class="text-gray-400 text-sm sm:text-base mt-4 max-w-xl mx-auto">Selecciona tus números favoritos, completa tus datos y envíalos directo por <span class="text-green-400 font-bold">WhatsApp</span>. ¡Así de fácil!</p>
+      </div>
+
+      <!-- Steps indicator -->
+      <div class="flex items-center justify-center gap-3 sm:gap-4 mb-10">
+        <div class="flex items-center gap-2">
+          <div id="step1Ind" class="step-indicator active">1</div>
+          <span class="text-xs font-bold text-white uppercase tracking-wider hidden sm:inline">Elige</span>
+        </div>
+        <div class="w-8 sm:w-12 h-0.5 bg-white/10 rounded"></div>
+        <div class="flex items-center gap-2">
+          <div id="step2Ind" class="step-indicator pending">2</div>
+          <span class="text-xs font-bold text-gray-600 uppercase tracking-wider hidden sm:inline">Datos</span>
+        </div>
+        <div class="w-8 sm:w-12 h-0.5 bg-white/10 rounded"></div>
+        <div class="flex items-center gap-2">
+          <div id="step3Ind" class="step-indicator pending">3</div>
+          <span class="text-xs font-bold text-gray-600 uppercase tracking-wider hidden sm:inline">WhatsApp</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Number Selection -->
+      <div id="boletasStep1" class="boletas-fade-in">
+        <!-- Search + Random -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
+          <div class="relative flex-1">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600">🔍</span>
+            <input type="text" id="boletaSearch" maxlength="4" inputmode="numeric" placeholder="Buscar número (ej: 1234)" class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white text-sm placeholder-gray-600 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition-all" oninput="boletasApp.handleSearch(this)">
+          </div>
+          <div class="flex gap-2">
+            <button onclick="boletasApp.selectRandom(1)" class="flex items-center gap-1.5 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-green-900/30 hover:border-green-600/40 hover:text-green-400 transition-all text-xs font-bold uppercase tracking-wider">
+              🎲 <span>×1</span>
+            </button>
+            <button onclick="boletasApp.selectRandom(3)" class="flex items-center gap-1.5 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-green-900/30 hover:border-green-600/40 hover:text-green-400 transition-all text-xs font-bold uppercase tracking-wider">
+              🎲 <span>×3</span>
+            </button>
+            <button onclick="boletasApp.selectRandom(5)" class="flex items-center gap-1.5 px-4 py-3 bg-gradient-to-r from-yellow-400/10 to-yellow-400/5 border border-yellow-400/20 rounded-xl text-yellow-300 hover:from-yellow-400/20 hover:to-yellow-400/10 hover:border-yellow-400/40 transition-all text-xs font-bold uppercase tracking-wider">
+              🔥 <span>×5</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="flex items-center justify-between mb-4 text-xs">
+          <span class="text-gray-500">Disponibles: <span id="availableCount" class="text-green-400 font-bold">452</span></span>
+          <span class="text-gray-500">Seleccionadas: <span id="selectedCount" class="text-yellow-400 font-bold">0</span></span>
+          <span class="text-gray-500">Pág <span id="pageIndicator" class="text-white font-bold">1/23</span></span>
+        </div>
+
+        <!-- Grid -->
+        <div id="boletasGrid" class="grid grid-cols-4 sm:grid-cols-5 gap-2.5 sm:gap-3 mb-5 boletas-fade-in"></div>
+
+        <!-- Search no results -->
+        <div id="searchMessage" class="hidden text-center py-8">
+          <span class="text-4xl mb-3 block">😕</span>
+          <p class="text-gray-500 text-sm">Ese número no está disponible. ¡Prueba otro!</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex items-center justify-center gap-1.5 mb-6">
+          <button onclick="boletasApp.prevPage()" class="page-btn">‹</button>
+          <div id="paginationBtns" class="flex items-center gap-1"></div>
+          <button onclick="boletasApp.nextPage()" class="page-btn">›</button>
+        </div>
+
+        <!-- Selected Panel -->
+        <div id="selectedPanel" class="hidden">
+          <div class="bg-white/5 border border-green-700/30 rounded-2xl p-5 sm:p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <span class="text-green-400 text-lg">🎫</span>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider">Tus Boletas</h4>
+              </div>
+              <button onclick="boletasApp.clearAll()" class="text-xs text-red-400 hover:text-red-300 font-bold uppercase tracking-wider transition-colors">Limpiar todo</button>
+            </div>
+            <div id="selectedChips" class="flex flex-wrap gap-2 mb-4"></div>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div>
+                <span class="text-gray-500 text-xs">Total:</span>
+                <span id="totalBoletas" class="text-yellow-400 font-display text-2xl ml-2">0</span>
+                <span class="text-gray-500 text-xs"> boleta(s) × $50.000</span>
+              </div>
+              <span id="totalPrice" class="text-green-400 font-display text-2xl">$0</span>
+            </div>
+            <button onclick="boletasApp.goToStep2()" class="mt-5 w-full py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-black uppercase text-sm tracking-wider rounded-xl transition-all shadow-lg shadow-green-900/50 flex items-center justify-center gap-2">
+              CONTINUAR — Ingresa tus datos →
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty state -->
+        <div id="emptyHint" class="text-center mt-2">
+          <p class="text-gray-600 text-xs">👆 Toca los números que quieres o usa 🎲 para azar</p>
+        </div>
+      </div>
+
+      <!-- STEP 2: User Data Form -->
+      <div id="boletasStep2" class="hidden boletas-fade-in">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-white font-bold text-lg">📋 Tus Datos</h3>
+            <button onclick="boletasApp.backToStep1()" class="text-xs text-gray-400 hover:text-white font-bold uppercase tracking-wider transition-colors">← Volver</button>
+          </div>
+
+          <div class="checkout-form space-y-4">
+            <div>
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Nombre completo *</label>
+              <input type="text" id="userName" placeholder="Ej: Juan Pérez" autocomplete="name">
+            </div>
+            <div>
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Teléfono / WhatsApp *</label>
+              <input type="tel" id="userPhone" placeholder="Ej: 3101234567" inputmode="numeric" autocomplete="tel">
+            </div>
+            <div>
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Ciudad *</label>
+              <input type="text" id="userCity" placeholder="Ej: Pereira" autocomplete="address-level2">
+            </div>
+            <div>
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Cédula (opcional)</label>
+              <input type="text" id="userCedula" placeholder="Ej: 1234567890" inputmode="numeric">
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="mt-6 bg-green-900/20 border border-green-700/20 rounded-xl p-4">
+            <p class="text-green-300 text-xs font-bold uppercase tracking-wider mb-2">Resumen de tu compra</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span id="summaryCount" class="text-white font-display text-xl">0</span>
+                <span class="text-gray-400 text-sm"> boleta(s)</span>
+              </div>
+              <span id="summaryPrice" class="text-yellow-400 font-display text-2xl">$0</span>
+            </div>
+            <div id="summaryNumbers" class="flex flex-wrap gap-1.5 mt-3"></div>
+          </div>
+
+          <div id="formError" class="hidden mt-4 bg-red-900/20 border border-red-700/30 rounded-xl p-3 text-red-300 text-xs text-center"></div>
+
+          <button onclick="boletasApp.sendWhatsApp()" class="mt-6 pulse-cta w-full py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-black uppercase text-base tracking-wider rounded-xl transition-all shadow-2xl shadow-green-600/40 flex items-center justify-center gap-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            ENVIAR POR WHATSAPP →
+          </button>
+          <p class="text-center text-gray-600 text-xs mt-3">Se abrirá WhatsApp con tus boletas y datos listos 🚀</p>
         </div>
       </div>
     </div>
@@ -953,6 +1190,7 @@
   <!-- ==================== TESTIMONIOS =========================== -->
   <!-- ============================================================ -->
   
+
   <!-- ============================================================ -->
   <!-- ==================== FAQ =================================== -->
   <!-- ============================================================ -->
@@ -1283,6 +1521,256 @@
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
+
+    // ===================== BOLETAS SELECTOR MODULE =====================
+    const boletasApp = (function() {
+      const AVAILABLE = [
+        '0014','0057','0060','0091','0124','0126','0133','0159','0193','0195','0239','0265','0276','0294','0381','0387',
+        '0411','0419','0459','0481','0508','0533','0552','0567','0581','0585','0675','0680','0708','0724','0738','0763',
+        '0778','0817','0836','0870','0872','0903','0907','0916','0950','0954','0957','0986','1056','1057','1082','1083',
+        '1105','1125','1127','1162','1196','1233','1272','1286','1328','1350','1369','1373','1411','1412','1415','1458',
+        '1470','1475','1502','1524','1528','1541','1556','1592','1663','1668','1682','1739','1773','1802','1811','1831',
+        '1851','1879','1906','1932','1943','1958','1973','1974','1989','1991','2004','2066','2098','2121','2141','2154',
+        '2176','2249','2279','2327','2328','2354','2369','2397','2428','2443','2457','2466','2487','2488','2505','2520',
+        '2549','2570','2577','2578','2594','2623','2647','2661','2671','2725','2731','2745','2746','2779','2809','2816',
+        '2817','2885','2904','2916','2940','2968','2984','2999','3006','3021','3057','3118','3205','3254','3263','3327',
+        '3335','3353','3361','3379','3417','3445','3459','3461','3476','3496','3506','3523','3542','3546','3583','3604',
+        '3647','3652','3687','3699','3722','3734','3761','3781','3814','3836','3867','3873','3878','3910','3931','3946',
+        '3949','3955','3974','3987','3997','4006','4029','4054','4096','4134','4155','4185','4228','4275','4297','4302',
+        '4335','4373','4374','4389','4406','4420','4456','4511','4512','4556','4572','4616','4644','4673','4690','4702',
+        '4721','4722','4767','4781','4813','4828','4833','4854','4856','4894','4900','4937','4947','4956','4965','4975',
+        '4989','4993','4998','5014','5045','5106','5156','5162','5187','5208','5227','5252','5310','5333','5341','5347',
+        '5358','5389','5392','5411','5414','5439','5463','5506','5514','5518','5542','5592','5616','5620','5624','5670',
+        '5678','5685','5705','5736','5740','5766','5771','5828','5854','5864','5865','5879','5909','5929','5941','5963',
+        '5982','6008','6021','6044','6054','6072','6074','6125','6126','6130','6152','6154','6199','6202','6235','6240',
+        '6256','6296','6313','6340','6392','6406','6424','6451','6457','6503','6520','6550','6570','6598','6622','6661',
+        '6672','6674','6736','6762','6767','6802','6820','6821','6899','6934','6956','6980','6982','6999','7007','7021',
+        '7051','7093','7119','7124','7150','7158','7179','7180','7248','7254','7281','7292','7328','7336','7373','7395',
+        '7415','7431','7434','7458','7459','7471','7487','7489','7504','7505','7547','7594','7624','7630','7690','7701',
+        '7722','7747','7766','7767','7809','7855','7895','7898','7924','7949','7997','8005','8052','8057','8073','8110',
+        '8151','8165','8188','8202','8220','8248','8254','8260','8265','8270','8284','8293','8305','8315','8335','8353',
+        '8356','8487','8516','8526','8533','8582','8595','8610','8627','8647','8648','8671','8742','8760','8784','8809',
+        '8816','8875','8882','8904','8957','8961','8987','9008','9057','9069','9082','9105','9106','9114','9171','9203',
+        '9226','9228','9265','9312','9335','9355','9393','9394','9400','9430','9447','9449','9470','9498','9506','9573',
+        '9586','9613','9614','9615','9634','9645','9664','9702','9758','9763','9790','9806','9818','9848','9867','9891',
+        '9923','9936','9948','9983'
+      ];
+
+      const PER_PAGE = 20;
+      let currentPage = 0;
+      let selected = new Set();
+      let filtered = null; // null = show all
+
+      const $ = id => document.getElementById(id);
+
+      function getList() { return filtered || AVAILABLE; }
+      function totalPages() { return Math.ceil(getList().length / PER_PAGE); }
+
+      function handleSearch(input) {
+        const v = input.value.replace(/\D/g, '');
+        input.value = v;
+        if (v.length === 0) {
+          filtered = null;
+          currentPage = 0;
+          $('searchMessage').classList.add('hidden');
+          $('boletasGrid').classList.remove('hidden');
+          renderGrid();
+          renderPagination();
+          return;
+        }
+        const matches = AVAILABLE.filter(n => n.includes(v));
+        if (matches.length === 0) {
+          $('boletasGrid').classList.add('hidden');
+          $('searchMessage').classList.remove('hidden');
+          $('paginationBtns').innerHTML = '';
+          return;
+        }
+        $('searchMessage').classList.add('hidden');
+        $('boletasGrid').classList.remove('hidden');
+        filtered = matches;
+        currentPage = 0;
+        renderGrid();
+        renderPagination();
+        // Highlight exact match
+        if (v.length === 4) {
+          const el = document.querySelector(`.boleta-btn[data-num="${v}"]`);
+          if (el) el.classList.add('search-highlight');
+        }
+      }
+
+      function renderGrid() {
+        const list = getList();
+        const start = currentPage * PER_PAGE;
+        const page = list.slice(start, start + PER_PAGE);
+        const grid = $('boletasGrid');
+        grid.innerHTML = page.map(n => {
+          const sel = selected.has(n) ? ' selected' : '';
+          return `<button class="boleta-btn${sel}" data-num="${n}" onclick="boletasApp.toggle('${n}')">${n}</button>`;
+        }).join('');
+        // Update stats
+        $('availableCount').textContent = AVAILABLE.length;
+        $('selectedCount').textContent = selected.size;
+        $('pageIndicator').textContent = `${currentPage + 1}/${totalPages() || 1}`;
+      }
+
+      function renderPagination() {
+        const tp = totalPages();
+        const c = currentPage;
+        const container = $('paginationBtns');
+        if (tp <= 1) { container.innerHTML = ''; return; }
+        let pages = [];
+        if (tp <= 7) {
+          for (let i = 0; i < tp; i++) pages.push(i);
+        } else {
+          pages.push(0);
+          if (c > 2) pages.push('...');
+          for (let i = Math.max(1, c - 1); i <= Math.min(tp - 2, c + 1); i++) pages.push(i);
+          if (c < tp - 3) pages.push('...');
+          pages.push(tp - 1);
+        }
+        container.innerHTML = pages.map(p => {
+          if (p === '...') return '<span class="page-btn dots">…</span>';
+          const active = p === c ? ' active' : '';
+          return `<button class="page-btn${active}" onclick="boletasApp.goToPage(${p})">${p + 1}</button>`;
+        }).join('');
+      }
+
+      function toggle(num) {
+        if (selected.has(num)) selected.delete(num); else selected.add(num);
+        renderGrid();
+        renderSelectedPanel();
+      }
+
+      function renderSelectedPanel() {
+        const panel = $('selectedPanel');
+        const empty = $('emptyHint');
+        if (selected.size === 0) {
+          panel.classList.add('hidden');
+          empty.classList.remove('hidden');
+          return;
+        }
+        empty.classList.add('hidden');
+        panel.classList.remove('hidden');
+
+        const sorted = [...selected].sort();
+        $('selectedChips').innerHTML = sorted.map(n =>
+          `<span class="boleta-chip" onclick="boletasApp.toggle('${n}')">${n} <span class="chip-x">✕</span></span>`
+        ).join('');
+        $('totalBoletas').textContent = selected.size;
+        $('totalPrice').textContent = '$' + (selected.size * 50000).toLocaleString('es-CO');
+      }
+
+      function selectRandom(count) {
+        const unselected = AVAILABLE.filter(n => !selected.has(n));
+        const pick = Math.min(count, unselected.length);
+        // Fisher-Yates shuffle
+        for (let i = unselected.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [unselected[i], unselected[j]] = [unselected[j], unselected[i]];
+        }
+        for (let i = 0; i < pick; i++) selected.add(unselected[i]);
+        // Navigate to page with first new pick
+        if (pick > 0 && !filtered) {
+          const idx = AVAILABLE.indexOf(unselected[0]);
+          currentPage = Math.floor(idx / PER_PAGE);
+        }
+        renderGrid();
+        renderPagination();
+        renderSelectedPanel();
+      }
+
+      function clearAll() {
+        selected.clear();
+        renderGrid();
+        renderSelectedPanel();
+      }
+
+      function goToPage(p) {
+        currentPage = p;
+        renderGrid();
+        renderPagination();
+        $('elegir-boletas').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function prevPage() { if (currentPage > 0) goToPage(currentPage - 1); }
+      function nextPage() { if (currentPage < totalPages() - 1) goToPage(currentPage + 1); }
+
+      // STEP NAVIGATION
+      function goToStep2() {
+        if (selected.size === 0) return;
+        $('boletasStep1').classList.add('hidden');
+        $('boletasStep2').classList.remove('hidden');
+        $('boletasStep2').classList.add('boletas-fade-in');
+        // Update indicators
+        $('step1Ind').className = 'step-indicator done';
+        $('step2Ind').className = 'step-indicator active';
+        // Update summary
+        const sorted = [...selected].sort();
+        $('summaryCount').textContent = selected.size;
+        $('summaryPrice').textContent = '$' + (selected.size * 50000).toLocaleString('es-CO');
+        $('summaryNumbers').innerHTML = sorted.map(n =>
+          `<span class="inline-block bg-green-900/40 border border-green-700/30 text-green-400 text-xs font-bold px-2 py-1 rounded-lg">${n}</span>`
+        ).join('');
+        $('elegir-boletas').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function backToStep1() {
+        $('boletasStep2').classList.add('hidden');
+        $('boletasStep1').classList.remove('hidden');
+        $('step1Ind').className = 'step-indicator active';
+        $('step2Ind').className = 'step-indicator pending';
+        $('elegir-boletas').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function sendWhatsApp() {
+        const name = $('userName').value.trim();
+        const phone = $('userPhone').value.trim();
+        const city = $('userCity').value.trim();
+        const cedula = $('userCedula').value.trim();
+
+        // Reset styles
+        ['userName','userPhone','userCity'].forEach(id => $(id).classList.remove('invalid'));
+        $('formError').classList.add('hidden');
+
+        // Validate
+        let errors = [];
+        if (!name || name.length < 3) { $('userName').classList.add('invalid'); errors.push('nombre'); }
+        if (!phone || phone.length < 7) { $('userPhone').classList.add('invalid'); errors.push('teléfono'); }
+        if (!city || city.length < 2) { $('userCity').classList.add('invalid'); errors.push('ciudad'); }
+
+        if (errors.length > 0) {
+          $('formError').classList.remove('hidden');
+          $('formError').textContent = '⚠️ Por favor completa: ' + errors.join(', ');
+          return;
+        }
+
+        // Update step indicator
+        $('step2Ind').className = 'step-indicator done';
+        $('step3Ind').className = 'step-indicator active';
+
+        const sorted = [...selected].sort();
+        const total = '$' + (selected.size * 50000).toLocaleString('es-CO');
+        let msg = `🏆🎫 *¡QUIERO COMPRAR BOLETAS PARA LA RIFA DEL JEEP!*\n\n`;
+        msg += `👤 *Nombre:* ${name}\n`;
+        msg += `📱 *Teléfono:* ${phone}\n`;
+        msg += `📍 *Ciudad:* ${city}\n`;
+        if (cedula) msg += `🪪 *Cédula:* ${cedula}\n`;
+        msg += `\n🎫 *Boletas seleccionadas (${selected.size}):*\n`;
+        msg += sorted.join(' • ');
+        msg += `\n\n💰 *Total:* ${total}\n`;
+        msg += `\n¡Espero confirmación de pago! 🚙💪`;
+
+        const encoded = encodeURIComponent(msg);
+        window.open(`https://wa.me/573218626030?text=${encoded}`, '_blank');
+      }
+
+      // INIT
+      renderGrid();
+      renderPagination();
+      renderSelectedPanel();
+
+      return { handleSearch, toggle, selectRandom, clearAll, goToPage, prevPage, nextPage, goToStep2, backToStep1, sendWhatsApp };
+    })();
   </script>
 </body>
 </html>
